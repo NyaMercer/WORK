@@ -1,0 +1,807 @@
+@import url(base.css);
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+    color: #888;
+}
+h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.intro-section {
+    background-image: url('../img/bnner.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: table;
+    z-index: 21;
+}
+.intro-section:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.7;
+    z-index: 1;
+}
+.intro-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 20.4% 0;
+}
+.intro-content h1 {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+.intro-content p{
+    margin-bottom: 30px;
+    color: white;
+}
+.social a:hover{
+    color: #b1b1b1;
+}
+.social {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background: #181818;
+    color: white;
+    font-size: 18px;
+}
+
+/*个人简介部分开始*/
+.spad {
+    padding: 120px 0;
+}
+.about_me {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.intro-img a,
+.intro-img a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.intro-text {
+	height: auto;
+}
+.single-progress-item:last-child {
+	margin-bottom: 0;
+}
+
+.intro-text h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: .02em;
+}
+
+/*个人简介部分结束*/
+
+/*服务部分开始*/
+.services-section {
+    background: #f6f6f6;
+}
+.services-our {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.service-item {
+    text-align: center;
+    padding:0 15px;
+    margin-top: 10px;
+}
+.service-box {
+    margin-bottom: 30px;
+    padding: 30px;
+    background: #fff;
+    transition: all .25s;
+}
+.service-box:hover {
+    box-shadow: 0px 4px 16px 0px #808080;
+    transform:translateY(-5px) ;
+
+}
+.services-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    transition: all .5s;
+}
+.services-icon .iconfont {
+    font-size: 32px;
+    color: #333;
+}
+.service-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #333;
+}
+/*服务部分结束*/
+
+
+/*PORTFOLIO部分开始*/
+.section-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.portfolio-filter {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.filter {
+    color: #888888;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight:bold;
+}
+.filter:first-child {
+    color: black;
+}
+.filter:hover {
+    color: black;
+}
+.work-item {
+	position: relative;
+}
+.mask {
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	opacity: 0;
+	transition: all 0.5s ease 0s;
+	width: 100%;
+	height: 100%;
+}
+.grid-item:hover .mask,
+.grid-item:hover .work-zoom,
+.grid-item:hover .mask >h4,
+.grid-item:hover .mask >p {
+     opacity: 1;
+ }
+.grid-item:hover .work-zoom {
+    transform: scale(1);
+}
+.grid-item:hover .mask >h4 {
+    letter-spacing: 0px;
+}
+.grid-item:hover .mask >p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.work-zoom {
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    color: #333;
+    display: table;
+    text-align: center;
+    left: 50%;
+    top: 45%;
+    margin-left: -0px;
+    margin-top: -25px;
+    background: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transform: scale(0.0);
+    transition: .5s;
+}
+.work-zoom i {
+    display: table-cell;
+    vertical-align: middle;
+}
+.grid-item:hover .work-zoom  {
+    opacity: 0.7;
+}
+.grid-item:hover .work-zoom2  {
+    opacity: 0.7;
+}
+.grid-item:hover .work-zoom2  {
+    transform: scale(1);
+}
+.work-zoom2 {
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    color: #333;
+    display: table;
+    text-align: center;
+    left: 50%;
+    top: 45%;
+    margin-left: -50px;
+    margin-top: -25px;
+    background: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transform: scale(0.0);
+    transition: .5s;
+}
+.work-zoom2 i {
+    display: table-cell;
+    vertical-align: middle;
+}
+.icon-sousuo {
+    display: inline-block;
+    font-size: 14px;
+    font-size: inherit;
+    text-rendering: auto;
+}
+.work-zoom i:hover {
+    background: red;
+    color: white;
+    border-radius: 100%;
+}
+.work-zoom2 i:hover {
+    background: red;
+    color: white;
+    border-radius: 100%;
+}
+.mask h4 {
+    position: absolute;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    left: 20%;
+    top: 55%;
+    letter-spacing: -8px;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.mask p {
+    position: absolute;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    left: 35%;
+    top: 70%;
+    transition: all 0.5s;
+    opacity: 0;
+    transform: translateY(70px);
+}
+/*PORTFOLIO部分结束*/
+
+/*testinonial部分开始*/
+.testinonial-section {
+    text-align: center;
+    background: #f6f6f6;
+}
+.testinonial-img {
+    height: 150px;
+    margin-top: 30px;
+}
+.testinonial-item a,
+.testinonial-item a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*testinonial部分结束*/
+
+
+/*博客部分开始*/
+.blog-section .title {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.blog-section-img {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.blog-item-text {
+	padding: 10px;
+	text-align: left;
+}
+.blog-item-text h2 {
+	font-size: 20px;
+	color: #333;
+	margin-bottom: 15px;
+	font-weight: 600;
+}
+.blog-item-text p {
+	font-size: 16px;
+	word-break: break-all;
+}
+.blog-item-text h5 {
+	margin-top: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #616161;
+}
+.blog-item a {
+	box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.15);
+	margin-bottom: 30px;
+}
+.blog-item a,
+.blog-item a img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.text-center {
+	text-align: center;
+	margin-top: 20px;
+	width: 100%;
+	height: auto;
+}
+.site-button {
+	display: inline-block;
+	border: 2px solid #000;
+	color: #000;
+    padding: 13px 40px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 50px;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    box-shadow: 0 0 3px 7px transparent;
+}
+.site-button:hover {
+    box-shadow: 0 0 0 0 #000;
+    background: #000;
+    color: #fff;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+/*博客部分结束*/
+/*结尾开始*/
+.texteare{
+    width: 100%;
+    padding: 90px 0;
+    background: #f6f6f6;
+}
+.foot-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.foot-title h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+.foot-title p {
+    font-size: 17px;
+    color: #888;
+    line-height: 27px;
+}
+.foot-ul {
+    /*background: #fff;*/
+    padding-left: 20px;
+}
+.info-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+
+}
+.foot-ul .info-item:last-child {
+    margin-bottom: 0;
+}
+.foot-ul .info-item .icon {
+    margin-bottom: 10px;
+    float: left;
+}
+.info-item .icon span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    background-color: #f6f6f6;
+    color: #55575d;
+    font-size: 36px;
+    text-align: center;
+}
+.info-item .icon span i {
+    font-size: 36px;
+}
+.info-item .content p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #959595;
+    margin: 0px;
+}
+.foot-text form input {
+    display: block;
+    width: 100%;
+    height: 55px;
+    padding: 7px 10px;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.foot-text form input:last-child {
+    display: block;
+    width: 100px;
+    height: 55px;
+    padding: 7px 10px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    cursor:pointer;
+}
+.send-div {
+    position: relative;
+}
+.foot-text form textarea {
+    width: 100%;
+    height: 163px;
+    padding: 10px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding-right: 80px;
+    outline: none;
+}
+form >.send-bth {
+    margin-top: 20px;
+    padding: 10px 30px ;
+    background: #000;
+}
+.foot-text form button i {
+    font-size: 30px;
+}
+.foot-text form button:hover {
+    background: #fff;
+    color: #000;
+}
+textarea {
+    resize: none;
+}
+footer {
+    width: 100%;
+    background: #111;
+    padding: 50px 0;
+
+}
+footer p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+}
+.icon-back {
+    text-align: center;
+}
+.icon-back a {
+    background: #808080;
+    color: #000;
+    padding: 10px;
+    border-radius: 100%;
+    line-height: 36px;
+}
+.icon-back a:hover {
+    background: #00bfff;
+    color: #fff;
+}
+/*结尾结束*/
+
+@media screen and (max-width: 768px) {
+    /*个人简介部分开始*/
+    .intro-img {
+        margin-bottom: 30px;
+    }
+    /*个人简介部分结束*/
+    .testinonial-item:nth-child(6),
+    .testinonial-item:nth-child(5),
+    .testinonial-item:nth-child(4) {
+        display: none;
+    }
+    .icon-back  {
+        margin-top: 20px;
+    }
+    .introduce {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .service-item {
+        margin-bottom: 34px;
+        margin-right: 15px;
+    }
+	
+	.portfolio_container [class*="col-"] {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.portfolio_container {
+		margin-bottom: -30px;
+	}
+	.work-item {
+	    width: 100%;
+	    margin-bottom: 30px;
+	}
+	.work-item img {
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	}
+    .mask h4 {
+        position: absolute;
+        font-size: 18px;
+        line-height: 24px;
+        color: #fff;
+        left: 30%;
+        top: 50%;
+        letter-spacing: -8px;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .mask p {
+        position: absolute;
+        font-size: 18px;
+        line-height: 24px;
+        color: #fff;
+        left: 40%;
+        top: 60%;
+        transition: all 0.5s;
+        opacity: 0;
+        transform: translateY(70px);
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    /*个人简介部分开始*/
+    .intro-img {
+        margin-bottom: 30px;
+    }
+    .service-item {
+        margin-bottom: 34px;
+    }
+    .icon-back  {
+        margin-top: 20px;
+    }
+    /*个人简介部分结束*/
+    .testinonial-item:nth-child(5),
+    .testinonial-item:nth-child(6) {
+        display: none;
+    }
+    .testinonial-item {
+        width: 176.25px;
+        height: 82.61px;
+    }
+    .mask h4 {
+        position: absolute;
+        font-size: 14px;
+        line-height: 24px;
+        color: #fff;
+        left: 12%;
+        top: 55%;
+        letter-spacing: -8px;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .mask p {
+        position: absolute;
+        font-size: 14px;
+        line-height: 24px;
+        color: #fff;
+        left: 30%;
+        top: 70%;
+        transition: all 0.5s;
+        opacity: 0;
+        transform: translateY(70px);
+    }
+
+
+    .portfolio_container {
+        position: relative;
+        margin-bottom: -30px;
+    }
+    .grid-item {
+        margin-bottom: 30px;
+    }
+    /*.item1 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
+    /*}*/
+    /*.item2 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 250px;*/
+    /*}*/
+    /*.item3 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 500px;*/
+    /*}*/
+    /*.item4 {*/
+        /*position: absolute;*/
+        /*top: 301px;*/
+        /*left: 0;*/
+    /*}*/
+    /*.item5 {*/
+        /*position: absolute;*/
+        /*top: 250px;*/
+        /*left: 250px;*/
+    /*}*/
+    /*.item6 {*/
+        /*position: absolute;*/
+        /*top: 318px;*/
+        /*left: 500px;*/
+    /*}*/
+    .work-item {
+        width: 220px;
+        height: 100%;
+    }
+    .work-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    /*个人简介部分开始*/
+    /*个人简介部分结束*/
+
+    .testinonial-item:nth-child(6) {
+        display: none;
+    }
+    .testinonial-item {
+        width: 184px;
+        height: 86.25px;
+    }
+
+    .portfolio_container {
+        position: relative;
+        margin-bottom: -30px;
+    }
+    .grid-item {
+        margin-bottom: 30px;
+    }
+    .mask h4 {
+        position: absolute;
+        font-size: 18px;
+        line-height: 24px;
+        color: #fff;
+        left: 15%;
+        top: 55%;
+        letter-spacing: -8px;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .mask p {
+        position: absolute;
+        font-size: 18px;
+        line-height: 24px;
+        color: #fff;
+        left: 32%;
+        top: 70%;
+        transition: all 0.5s;
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    /*.item1 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*height: 361px;*/
+    /*}*/
+    /*.item2 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 323px;*/
+        /*height: 293px;*/
+    /*}*/
+    /*.item3 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 646px;*/
+        /*height: 384px;*/
+    /*}*/
+    /*.item4 {*/
+        /*position: absolute;*/
+        /*top: 391px;*/
+        /*left: 0;*/
+        /*height: 276px;*/
+    /*}*/
+    /*.item5 {*/
+        /*position: absolute;*/
+        /*top: 323px;*/
+        /*left: 323px;*/
+        /*height: 342px;*/
+    /*}*/
+    /*.item6 {*/
+        /*position: absolute;*/
+        /*top: 414px;*/
+        /*left: 646px;*/
+        /*height: 249px;*/
+    /*}*/
+    .work-item {
+        width: 293.33px;
+        height: 100%;
+    }
+    .work-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /*个人简介部分开始*/
+    .intro-img {
+
+    }
+    .testinonial-item {
+        width: 185.833px;
+        height: 87px;
+    }
+    /*个人简介部分结束*/
+
+
+    .portfolio_container {
+        position: relative;
+    }
+    .grid-item {
+        margin-bottom: 30px;
+    }
+    /*.item1 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
+    /*}*/
+    /*.item2 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 390px;*/
+    /*}*/
+    /*.item3 {*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 780px;*/
+    /*}*/
+    /*.item4 {*/
+        /*position: absolute;*/
+        /*top: 473px;*/
+        /*left: 0;*/
+    /*}*/
+    /*.item5 {*/
+        /*position: absolute;*/
+        /*top: 390px;*/
+        /*left: 390px;*/
+
+    /*}*/
+    /*.item6 {*/
+        /*position: absolute;*/
+        /*top: 502px;*/
+        /*left: 780px;*/
+
+    /*}*/
+    .work-item {
+        width: 360px;
+        height: 100%;
+    }
+    .work-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
