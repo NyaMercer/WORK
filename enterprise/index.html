@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/rest.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    
+</head>
+<style>
+    #menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    width: 400px;
+    list-style-type:none;
+    display: flex;
+    justify-content: space-between;
+}
+#menu li {
+    width: 40px;
+    height: 100%;
+    float: left;
+    
+}
+#menu li a .active {
+    color: #000;
+}
+#menu li a {
+    color: #fff;
+    font-size: 15px;
+    font-weight:900;
+
+}
+
+    main {
+        display: block;
+        margin: 0 auto;
+        width: 1200px;
+        height: 100%
+    }
+    .pic1 {
+        background: url(image/first.jpg)50%;
+        overflow: hidden;
+    }
+    .pic2 {
+        background: url(image/next2.jpg)50%;
+        overflow: hidden;
+    }
+    .pic3 {
+        background: url(image/next4.jpg)50%;
+        overflow: hidden;
+    }
+    .pic4 {
+        background: url(image/next3.jpg)50%;
+        overflow: hidden;
+    }
+    .pic1 main {
+        position: relative;
+    }
+    .pic2 main {
+        position: relative;
+    }
+    .pic3 main {
+        position: relative;
+    }
+    .pic4    main {
+        position: relative;
+    }
+    .title {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        color: #fff;
+        opacity: 1;
+        font-size: 50px;
+        text-align: center;
+        width: 100%;
+    }
+    .title h1 {
+        opacity: 1;
+        transform: scale(0);
+        -webkit-transition: all 1s ;
+        -moz-transition: all 1s ;
+        transition: all 1s ;
+    }
+       .active .title h1 {
+        opacity: 1;
+        transform: scale(1);
+        -webkit-transition: all 1s ;
+        -moz-transition: all 1s ;
+        transition: all 1s ;
+    }
+    .title h2 {
+        position: absolute;
+        top: 200%;
+        left: -422px;
+        opacity: 1;
+        -webkit-transition: all 1s ;
+        -moz-transition: all 1s ;
+        transition: all 1s ;
+    }
+    .active .title h2 {
+        opacity: 1;
+        position: absolute;
+        top: 200%;
+        left: 422px;
+        -webkit-transition: all 1.5s ;
+        -moz-transition: all 1.5s ;
+        transition: all 1.5s ;
+    }
+    .time {
+        position: absolute;
+        width:600px;
+        height: 30px;
+        top: 120%;
+        left: 35%;
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        /* line-height: 30px; */
+        /* padding-top:250px ; */
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+    
+    }
+    .active .time {
+        position: absolute;
+        top:75%;
+        left:35%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+    }
+    .time span{
+       float: left;
+       margin-right: 30px;
+       font-weight:900;
+       font-size: 40px;
+       margin-bottom: 10PX;
+       
+
+    }
+    .swiper-container {
+    position: absolute;
+    top: 30%;
+    left: 160%;
+    width: 750px;
+    height: 400px;
+    -webkit-transition: all 1.5s ;
+    -moz-transition: all 1.5s ;
+    transition: all 1.5s ;
+    }
+    .active .swiper-container{
+        position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 750px;
+    height: 400px;
+    -webkit-transition: all 2s ;
+    -moz-transition: all 2s ;
+    transition: all 2s ;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    .team1 {
+        background: url(image/star1.jpg) no-repeat  center;
+        background-size:100% 100%;
+    }
+    .team2 {
+        background: url(image/star2.jpg) no-repeat  center;
+        background-size:100% 100%;
+    }
+    .team3 {
+        background: url(image/star4.jpg) no-repeat  center;
+        background-size:100% 100%;
+    }
+    .team4 {
+        background: url(image/star5.jpg) no-repeat  center;
+        background-size:100% 100%;
+    }
+    .team5 {
+        background: url(image/star.jpg) no-repeat  center;
+        background-size:100% 100%;
+    }
+    .star h1 , p {
+        color: #fff;
+    }
+    .star h1 {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+    }
+    .star p {
+        margin-top: 60px;
+        float: left;
+        font-size: 10px;
+        text-align:left; 
+        margin-left: 20px;
+    }
+    .star {
+        width: 100%;
+        height: 100%;
+        background:rgba(0, 0, 0, 0.6) ;
+        z-index: 10;
+        border-radius: 20px;
+    }
+    .talk {
+        position: absolute;
+        top: 30%;
+        left:-300px;
+        width: 250px;
+        height: auto;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+
+    }
+    .talk h1 {
+        font-size:50px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .talk p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .active .talk {
+        position: absolute;
+        top: 30%;
+        left:150px;
+        width: 250px;
+        height: auto;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+    }
+    .mage {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 1200px;
+        height: 100%;
+    }
+    .mage1 {
+        position: absolute;
+        left: -500px;
+        top: -150px;
+        width: 350px;
+        height:500px;
+        background: url(image/mage1.png) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all s ;
+        border-radius: 20px;
+       
+    }
+    .mage2 {
+        position: absolute;
+        left: -425px;
+        top: 650px;
+        width: 350px;
+        height:500px;
+        background: url(image/mage2.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+        border-radius: 20px;
+    }
+    .mage3 {
+        position: absolute;
+        left: 1350px;
+        top: -350px;
+        width: 350px;
+        height:225px;
+        background: url(image/next1.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+        border-radius: 20px;
+    }
+    .mage4 {
+        position: absolute;
+        left: 1550px;
+        top: 425px;
+        width: 350px;
+        height:225px;
+        background: url(image/web-4.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+        border-radius: 20px;
+    }
+    .active .mage1 {
+        position: absolute;
+        left: 0px;
+        top: 150px;
+        width: 350px;
+        height:500px;
+        background: url(image/mage1.png) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 3s ;
+        -moz-transition: all 3s ;
+        transition: all 3s ;
+       
+    }
+    .active .mage2 {
+        position: absolute;
+        left: 425px;
+        top: 150px;
+        width: 350px;
+        height:500px;
+        background: url(image/mage2.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+        
+    }
+    .active .mage3 {
+        position: absolute;
+        left: 850px;
+        top: 150px;
+        width: 350px;
+        height:225px;
+        background: url(image/next1.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+        
+    }
+    .active .mage4 {
+        position: absolute;
+        left: 850px;
+        top: 425px;
+        width: 350px;
+        height:225px;
+        background: url(image/web-4.jpg) no-repeat  center;
+        background-size:100% 100%;
+        -webkit-transition: all 2s ;
+        -moz-transition: all 2s ;
+        transition: all 2s ;
+    }
+    .map {
+        margin-top: 150px
+    }
+    .about {
+        margin-top: 150px
+    }
+    .about p {
+        text-align: center;
+        font-size: 50px;
+        font-weight:900;
+    }
+    .mass {
+        margin-top: 20px
+    }
+    .mass span  {
+        color:#fff;
+    }
+    .move  {
+        width: 250px;
+        margin-top: 150px;
+        font-size: 20px;
+        line-height:1.5;
+    }
+    .move  a{
+        display:block;
+        width: 70px;
+        height: 50px;
+        color:#fff;
+        text-align: center;
+        line-height: 50px;
+        background: rgb(45, 192, 94);
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 32%;
+        border-radius: 5px;
+    }
+</style>
+<body>
+            <ul id="menu">
+                    <li data-menuanchor="this1"class="active"><a href="#this1">Home</a></li>
+                    <li data-menuanchor="this2"><a href="#this2">Team</a></li>
+                    <li data-menuanchor="this3"><a href="#this3">Gallery</a></li>
+                    <li data-menuanchor="this4"><a href="#this4">About</a></li>
+            </ul>
+    <div id="dowebok">
+        <div class="section pic1">
+            <main>
+                <div class="title">
+                 <h1>Sports can be so fashionable</h1>
+                 <h2>Christmas Day</h2>
+            </div>
+
+                <div class="time">
+                    <span class="day">00</span> 
+                    <span class="hover">00</span>
+                    <span class="minutes">00</span>
+                    <span class="seconds">00</span>
+                </div>
+            </main>   
+        </div>
+        <div class="section pic2">
+            <main>
+                <div class="talk">
+                                      <h1>My Best Team</h1>
+                                      <p>The firmness of the goal is one of the most necessary sources of strength in character, and one of the tools of success. Without it, genius will be in vain in the path of conflict.</p>
+                                  </div>
+                    <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide team1">
+                                  
+                                  <div class="star">
+                                      <h1>Taylor Swift</h1>
+                                      <p>I try not refer to people who like my music as fans,because i try to refer to them all as my friends.T am gonna try to be a part of their lives just as much as they are being a part of mine.</p>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide team2">
+                                    <div class="star">
+                                            <h1>Lily Collins</h1>
+                                            <p>Lily Collins signs copies of her book Unfiltered in which she forgives musician father Phil for not being the 'dad I expected'</p>
+                                        </div>
+                              </div>
+                              <div class="swiper-slide team3">
+                                    <div class="star">
+                                            <h1>Scarlett Johansson</h1>
+                                            <p>Tomorrow is another day</p>
+                                        </div>
+                              </div>
+                              <div class="swiper-slide team4">
+                                    <div class="star">
+                                            <h1>Emma Watson</h1>
+                                            <p>I don’t have perfect teeth, I’m not stick thin. I want to be the person who feels great in her body and can say that she loves it and doesn’t want to change anything.</p>
+                                        </div>
+                              </div>
+                              <div class="swiper-slide team5">
+                                    <div class="star">
+                                            <h1>Gabe Newell</h1>
+                                            <p>The programmers of tomorrow are the wizards of the future. You're going to look like you have magic powers compared to everybody else.</p>
+                                        </div>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+            </main>
+        </div>
+        <div class="section pic3">
+            <main>
+                <ul class="mage">
+                    <li class="mage1"></li>
+                    <li class="mage2"></li>
+                    <li class="mage3"></li>
+                    <li class="mage4"></li>
+                </ul>
+            </main>
+            
+        </div>
+        <div class="section pic4">
+            <main style="display:flex;justify-content: space-between;">
+                 <div class="about">
+                     <p >CONTACT US</p>
+                     <div>
+                         <img src="image/gps.png" alt=""style="margin-top:30px;margin-right:10px;display:inline-block">
+                        <span style="color:#fff;margin-top:30px;padding-left:20px">251 Monroe Ave, Kenilworth, NJ 07033, USA</span>
+                     </div>
+                     <div>
+                            <img src="image/min.png" alt=""style="margin-top:30px;margin-right:10px;display:inline-block">
+                           <span style="color:#fff;margin-top:30px;padding-left:20px">w823370825@gmail.com</span>
+                        </div>
+                        <div>
+                                <img src="image/ip.png" alt=""style="margin-top:30px;margin-right:10px;display:inline-block">
+                               <span style="color:#fff;margin-top:30px;padding-left:20px">+86 15835138761</span>
+                        </div>
+                        <div class="mass">
+                            <span style="margin-right:150px">Name&nbsp;:</span>
+                            <span>Email&nbsp;:</span><br>
+                            <input type="text" name="name" id="name" placeholder="Your Name" style="margin-bottom:30px;margin-right:40px">
+                            <input type="text" name="phone" id="phone" placeholder="Your Email" style="margin-bottom:30px;margin-right:20px"><br>
+                            <span><b>Massage&nbsp;:</b></span><br>
+                            <textarea id="massage" name="massage" placeholder="Your Massage" style="width: 385px;
+                            height: 152px;"></textarea>
+                        </div>
+                       
+                </div>
+                <div class="map">
+                    <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3240.1149018730684!2d139.77161131478434!3d35.69878998019025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea7e5e50da7%3A0x87c39df3c0a6a677!2z56eL5Y-25Y6f56uZ!5e0!3m2!1szh-CN!2scn!4v1504931530862" width="300" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="move">
+                    <p style="color:rgb(51, 51, 51);">Tincidunt integer eu augue augue nunc elit dolor, luctus placerat
+                         scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+                    <h1 style="margin-top:15%">Details</h1>
+                    <a href="html/index.html" >MOVE</a>
+                </div>
+            </main>
+           
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     function biye() {
+        var endtime=new Date(`12/25/2017 00:00:00`)
+        var nowtime=new Date()
+        var t=endtime.getTime()-nowtime.getTime()
+          var  days=Math.floor(t/1000/60/60/24)
+          var  hovers=Math.floor(t/1000/60/60%24)
+          var  minutess=Math.floor(t/1000/60%60)
+          var  secondss=Math.floor(t/1000%60)
+        document.querySelector(".day").innerHTML=days +"<br><span style='font-size: 18px;  color:#666;margin:10px 10px;'>DAY</span><br>"
+        document.querySelector(".hover").innerHTML=hovers +"<br><span style='font-size: 18px;  color:#666;margin:10px 10px;'>HOURS</span><br>"
+        document.querySelector(".minutes").innerHTML=minutess +"<br><span style='font-size: 18px;  color:#666;margin:10px 10px;'>MINS</span><br>"
+        document.querySelector(".seconds").innerHTML=secondss +"<br><span style='font-size: 18px;  color:#666;margin:10px 10px;'>SECS</span><br>"
+    }
+    setInterval(biye,0)
+</script>
+<script>
+    $(function(){
+    $('#dowebok').fullpage({
+        verticalCentered:true,
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+        scrollingSpeed:1500,
+        anchors:['this1','this2','this3','this4'],
+        menu: '#menu',
+    });
+});
+</script>
+  <script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          freeMode: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      </script>
